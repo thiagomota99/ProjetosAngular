@@ -77,7 +77,7 @@ export class AppModule { }
 <p>
  <b>O que é um componente?</b><br>
  Componentes são os artefatos que o angular utiliza para a construção da aplicação.
- O mesmo não passa de uma classe em ECMASCRIPT anotada com um decorator @Component, onde
+ O mesmo não passa de uma classe em ECMASCRIPT anotada com um decorator `@Component`, onde
  possui algumas propriedades que tem como objetivo definir arquivos de estilo, template e tag
  a ser utilizada no template de outros componentes.<br>
  
