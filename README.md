@@ -72,3 +72,54 @@ import { CursosModule } from './cursos/cursos.module';
 })
 export class AppModule { }
 ```
+</br>
+
+<p>
+ <b>O que é um componente?</b><br>
+ Componentes são os artefatos que o angular utiliza para a construção da aplicação.
+ O mesmo não passa de uma classe em ECMASCRIPT anotada com um decorator @Component, onde
+ possui algumas propriedades que tem como objetivo definir arquivos de estilo, template e tag
+ a ser utilizada no template de outros componentes.<br>
+ 
+ Exemplo de componente em Angular:
+ 
+ ```typescript
+ /*
+  Componentes possuem imports como qualquer outra classe em ECMASCRIPT.
+  Para que o Angular possa identificar onde estão os arquivos utilizados
+  na classe.
+*/
+import { Component, OnInit } from '@angular/core';
+
+/*
+  O decorator @Componente possui algumas propriedades.
+  Dentre elas as mais importantes são:
+    - selector: Tem como objetivo definir a tag do componente. 
+                Para caso for usado em outro componente da aplicação
+                O mesmo será referenciado pela sua tag <app-lista-cursos></app-lista-cursos>
+    
+    - templateUrl: Tem como objetivo referenciar o arquivo de template do componente. Onde ficará a parte
+                   estrutural(html) do componente.
+    
+    - styleUrls: Tem como objetivo referenciar o arquivo de estilo do componente. Onde ficará a parte de CSS
+                 do componente.
+*/
+@Component({
+  selector: 'app-lista-cursos',
+  templateUrl: './lista-cursos.component.html',
+  styleUrls: ['./lista-cursos.component.css']
+})
+/*
+  A nomenclatura para o nome do componente segue a convenção: NomeComponent
+*/
+export class ListaCursosComponent implements OnInit { //Todo componente deve implementar a interface OnInit (explicarei sua necessidade posteriormente)
+
+  //Todo componente deve possuir um constructor para injeção de depedências
+  constructor() { }
+
+  //Todo componente deve possuir o método ngOnInit (explicarei sua necessidade posteriormente)
+  ngOnInit(): void {
+  }
+}
+ ```
+</p>
