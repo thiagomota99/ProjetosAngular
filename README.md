@@ -122,4 +122,38 @@ export class ListaCursosComponent implements OnInit { //Todo componente deve imp
   }
 }
  ```
+</p></br>
+
+<p>
+ <b>O que é injeção de dependência em Angular?</b></br>
+ Injeção de de depedência de forma bem pontual é eliminar a criação de instâncias de forma manual
+ ou seja `public service = new Service()`. A injeção de depedência tem como objetivo criar uma instância
+ automaticamente. Em Angular a Injeção de Dependência é feita através do constructor das classes. Para
+ melhor exemplificar segue o exemplo abaixo:</br>
+ 
+ ```typescript
+ import { Component, OnInit } from '@angular/core';
+ import { CursosService } from '../cursos.service';
+
+@Component({
+  selector: 'app-lista-cursos',
+  templateUrl: './lista-cursos.component.html',
+  styleUrls: ['./lista-cursos.component.css']
+})
+
+export class ListaCursosComponent implements OnInit {
+
+  public cursos: string[];
+  /* 
+    Injetando o serviço CursosService no componente. Desta forma não precisamos instanciar a classe CursosService manualmente, o angular
+    ira fazer isso automaticamente.
+  */
+  constructor(private readonly cursosService: CursosService) { } 
+
+  ngOnInit(): void {
+    this.cursos = this.cursosService.getCursos();
+  }
+
+}
+ ```
 </p>
