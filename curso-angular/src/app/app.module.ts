@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
+import { DataBindingModule } from './data-binding/data-binding.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { CursosModule } from './cursos/cursos.module';
   imports: [
     BrowserModule,
     CursosModule,
+    DataBindingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

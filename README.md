@@ -156,4 +156,90 @@ export class ListaCursosComponent implements OnInit {
 
 }
  ```
+</p><br>
+
+<p>
+<b>O que é Data Binding?</b></br>
+Data Binding é a abordagem que o Angular utiliza para transitar os dados do componente (Clase ECMASCRIPT anotada com o decorator @Component) para seu respectivo template (arquivo html que representa a estrutura do componente). Entretanto podemos transitar os dados de outras duas formas. Ou seja, do template para o componente. Ou até mesmo de forma onde o template e o componente estão atualizados ao mesmo tempo.<br>
+Tipos de Data Binding</br>
+ 1 - Interpolação: Onde podemos transitar os dados do componente para o template. Sejam eles valores de atributos ou retorno de métodos.
+ 2 - Property Binding: Podendo também transitar os dados do componente para o template. Entretanto utilizando o atributos das tags do template
+ para receberem os valores do componente.<br>
+ 3 - Event Binding: Onde podemos realizar o caminho contrário. Onde os dados são transmitidos do template para o componente.</br>
+ 4 - Two away data binding: Onde podemos realizar atualizações tanto no componente como em seu template que os dados serão atualizados dos dois arquivos ao mesmo tempo.</br>
+
+ Exemplos abaixo:
+
+ ```typescript
+
+ //Classe do componente.
+ import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-property-binding',
+  templateUrl: './property-binding.component.html',
+  styleUrls: ['./property-binding.component.css']
+})
+export class PropertyBindingComponent implements OnInit {
+
+  public nomeDoCurso: string = 'Angular';
+  public urlDaImagem: string = 'https://i.picsum.photos/id/908/200/300.jpg?hmac=guEHon4cM5wVkD_yaCyg37gD09iEjrpqzKfo-YU-Iwc';
+  public descricaoDaImagem: string = 'Descrição da imagem';
+  public estiloDePropertyBinding: string[] = [
+    '<img [src]="urlDaImagem" [alt]="descricaoDaImagem">',
+    '<img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}>'
+  ]
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  getCurso(): string {
+    return this.nomeDoCurso;
+  }
+
+}
+ ```
+
+ ```html
+ <!-- Template do componente -->
+ <div style="margin-top: 10px;">
+    <h2>Interpolação</h2>
+    <p>String renderizada com a interpolação: {{ nomeDoCurso }}</p>
+    <p>
+        Podemos também utilizar a interpolação para resolver operações arítméticas: Soma, subtração, divisão e multiplicação <br>
+        Utilização da interpolação em operações lógicas, condicionais e retornos de métodos
+    </p>
+    <p>Exemplos:</p>
+    <ul>
+        <li>Soma: 2 + 2 = {{ 2+2 }}</li>
+        <li>Subtração: 2 - 2 = {{ 2-2 }}</li>
+        <li>Multiplicação: 2 x 2 = {{ 2*2 }}</li>
+        <li>Divisão: 2 / 2 = {{ 2/2 }}</li>
+        <li>2 > 2: {{ 2>2 }}</li>
+        <li>Retorno do método getCurso(): {{ getCurso() }}</li>
+    </ul>
+    <blockquote style="background-color: silver;">
+        Obs: A interpolação também é um tipo de property binding. Entretanto é mais utilizada <br>
+        quando não se não existe uma propriedade no elemento. Ou seja utilizada mais em tags que<br>
+        possuem fechamento, por exemplo a tag html "p".
+    </blockquote>
+</div>
+
+<div>
+    <h2>Property Binding</h2>
+    <p>
+        Como dito acima, a interpolação é utilizada mais em tags que possuem fechamento. Agora para aquelas <br>
+        que não possuem existe o propery binding.
+    </p>
+    <p>Exemplos</p>
+    Para renderizar uma imagem podemos realizar o property binding da seguinte forma: <br>
+    {{ estiloDePropertyBinding[0] }} <br>
+    <img [src]="urlDaImagem" [alt]="descricaoDaImagem"> <br>
+    {{ estiloDePropertyBinding[1] }} <br>
+    <img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}">
+</div>
+ ```
+ 
 </p>
