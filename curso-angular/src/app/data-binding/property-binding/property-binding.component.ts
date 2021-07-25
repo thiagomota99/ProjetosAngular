@@ -13,7 +13,39 @@ export class PropertyBindingComponent implements OnInit {
   public estiloDePropertyBinding: string[] = [
     '<img [src]="urlDaImagem" [alt]="descricaoDaImagem">',
     '<img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}>'
-  ]
+  ];
+  public ArrayDeClassAndStyleBinding: string[] = [
+    `<div 
+      class="alert" 
+      [class.alert-primary]="selectClasses.value == 'alert-primary'"
+      [style.display]="selectClasses.value == 'alert-primary' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-secondary]="selectClasses.value == 'alert-secondary'" 
+      [style.display]="selectClasses.value == 'alert-secondary' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-success]="selectClasses.value == 'alert-success'"
+      [style.display]="selectClasses.value == 'alert-success' ? 'block' : 'none'" 
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-danger]="selectClasses.value == 'alert-danger'"
+      [style.display]="selectClasses.value == 'alert-danger' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-warning]="selectClasses.value == 'alert-warning'"
+      [style.display]="selectClasses.value == 'alert-warning' ? 'block' : 'none'"
+      role="alert">
+    `,
+  ];
 
   constructor() { }
 

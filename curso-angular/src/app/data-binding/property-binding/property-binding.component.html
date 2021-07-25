@@ -34,3 +34,56 @@
     {{ estiloDePropertyBinding[1] }} <br>
     <img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}">
 </div>
+
+<div>
+    <h2>Class e Style binding</h2>
+    <p>
+        O Class e Style binding são outros tipos de property binding. Entretanto tem como objetivo manipular <br>
+        o css da página. Adicionado classes ou estilos as tags. Usareei o bootstrap para exemplificar essa abordagem. <br>
+    </p>
+    
+    <select #selectClasses (change)="0">
+        <option value="">Seleciona uma Opção</option>
+        <option value="alert-primary">Primário</option>
+        <option value="alert-secondary">Secundário</option>
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-danger">Erro</option>
+        <option value="alert-warning">Atenção</option>
+    </select>
+    <br><br>
+      <div 
+        class="alert" 
+        [class.alert-primary]="selectClasses.value == 'alert-primary'"
+        [style.display]="selectClasses.value == 'alert-primary' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[0] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-secondary]="selectClasses.value == 'alert-secondary'" 
+        [style.display]="selectClasses.value == 'alert-secondary' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[1] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-success]="selectClasses.value == 'alert-success'"
+        [style.display]="selectClasses.value == 'alert-success' ? 'block' : 'none'" 
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[2] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-danger]="selectClasses.value == 'alert-danger'"
+        [style.display]="selectClasses.value == 'alert-danger' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[3] }}
+      </div>
+      <div 
+      class="alert" 
+      [class.alert-warning]="selectClasses.value == 'alert-warning'"
+      [style.display]="selectClasses.value == 'alert-warning' ? 'block' : 'none'" 
+      role="alert">
+            {{ ArrayDeClassAndStyleBinding[4] }}
+      </div>
+</div>

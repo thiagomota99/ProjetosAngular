@@ -160,9 +160,9 @@ export class ListaCursosComponent implements OnInit {
 
 <p>
 <b>O que é Data Binding?</b></br>
-Data Binding é a abordagem que o Angular utiliza para transitar os dados do componente (Clase ECMASCRIPT anotada com o decorator @Component) para seu respectivo template (arquivo html que representa a estrutura do componente). Entretanto podemos transitar os dados de outras duas formas. Ou seja, do template para o componente. Ou até mesmo de forma onde o template e o componente estão atualizados ao mesmo tempo.<br>
+Data Binding é a abordagem que o Angular utiliza para transitar os dados do componente (Classe ECMASCRIPT anotada com o decorator @Component) para seu respectivo template (arquivo html que representa a estrutura do componente). Entretanto podemos transitar os dados de outras duas formas. Ou seja, do template para o componente. Ou até mesmo de forma onde o template e o componente estão atualizados ao mesmo tempo.<br>
 Tipos de Data Binding</br>
- 1 - Interpolação: Onde podemos transitar os dados do componente para o template. Sejam eles valores de atributos ou retorno de métodos.
+ 1 - Interpolação: Onde podemos transitar os dados do componente para o template. Sejam eles valores de atributos ou retorno de métodos. <br>
  2 - Property Binding: Podendo também transitar os dados do componente para o template. Entretanto utilizando o atributos das tags do template
  para receberem os valores do componente.<br>
  3 - Event Binding: Onde podemos realizar o caminho contrário. Onde os dados são transmitidos do template para o componente.</br>
@@ -171,9 +171,8 @@ Tipos de Data Binding</br>
  Exemplos abaixo:
 
  ```typescript
-
  //Classe do componente.
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-property-binding',
@@ -188,7 +187,39 @@ export class PropertyBindingComponent implements OnInit {
   public estiloDePropertyBinding: string[] = [
     '<img [src]="urlDaImagem" [alt]="descricaoDaImagem">',
     '<img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}>'
-  ]
+  ];
+  public ArrayDeClassAndStyleBinding: string[] = [
+    `<div 
+      class="alert" 
+      [class.alert-primary]="selectClasses.value == 'alert-primary'"
+      [style.display]="selectClasses.value == 'alert-primary' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-secondary]="selectClasses.value == 'alert-secondary'" 
+      [style.display]="selectClasses.value == 'alert-secondary' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-success]="selectClasses.value == 'alert-success'"
+      [style.display]="selectClasses.value == 'alert-success' ? 'block' : 'none'" 
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-danger]="selectClasses.value == 'alert-danger'"
+      [style.display]="selectClasses.value == 'alert-danger' ? 'block' : 'none'"
+      role="alert">
+    `,
+    `<div 
+      class="alert" 
+      [class.alert-warning]="selectClasses.value == 'alert-warning'"
+      [style.display]="selectClasses.value == 'alert-warning' ? 'block' : 'none'"
+      role="alert">
+    `,
+  ];
 
   constructor() { }
 
@@ -204,7 +235,7 @@ export class PropertyBindingComponent implements OnInit {
 
  ```html
  <!-- Template do componente -->
- <div style="margin-top: 10px;">
+<div style="margin-top: 10px;">
     <h2>Interpolação</h2>
     <p>String renderizada com a interpolação: {{ nomeDoCurso }}</p>
     <p>
@@ -240,6 +271,59 @@ export class PropertyBindingComponent implements OnInit {
     {{ estiloDePropertyBinding[1] }} <br>
     <img src="{{ urlDaImagem }}" alt="{{ descricaoDaImagem }}">
 </div>
+
+<div>
+    <h2>Class e Style binding</h2>
+    <p>
+        O Class e Style binding são outros tipos de property binding. Entretanto tem como objetivo manipular <br>
+        o css da página. Adicionado classes ou estilos as tags. Usareei o bootstrap para exemplificar essa abordagem. <br>
+    </p>
+    
+    <select #selectClasses (change)="0">
+        <option value="">Seleciona uma Opção</option>
+        <option value="alert-primary">Primário</option>
+        <option value="alert-secondary">Secundário</option>
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-danger">Erro</option>
+        <option value="alert-warning">Atenção</option>
+    </select>
+    <br><br>
+      <div 
+        class="alert" 
+        [class.alert-primary]="selectClasses.value == 'alert-primary'"
+        [style.display]="selectClasses.value == 'alert-primary' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[0] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-secondary]="selectClasses.value == 'alert-secondary'" 
+        [style.display]="selectClasses.value == 'alert-secondary' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[1] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-success]="selectClasses.value == 'alert-success'"
+        [style.display]="selectClasses.value == 'alert-success' ? 'block' : 'none'" 
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[2] }}
+      </div>
+      <div 
+        class="alert" 
+        [class.alert-danger]="selectClasses.value == 'alert-danger'"
+        [style.display]="selectClasses.value == 'alert-danger' ? 'block' : 'none'"
+        role="alert">
+            {{ ArrayDeClassAndStyleBinding[3] }}
+      </div>
+      <div 
+      class="alert" 
+      [class.alert-warning]="selectClasses.value == 'alert-warning'"
+      [style.display]="selectClasses.value == 'alert-warning' ? 'block' : 'none'" 
+      role="alert">
+            {{ ArrayDeClassAndStyleBinding[4] }}
+      </div>
+</div>
  ```
- 
+
 </p>
