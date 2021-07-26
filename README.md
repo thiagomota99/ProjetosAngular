@@ -544,3 +544,33 @@ export class OutputPropertyComponent implements OnInit {
   ngOnDestroy(): É executado imediatamente após da destruição do componente/diretiva. Tem como um dos seus principais objetivos ser o método do ciclo de vida para se desinscrever de observables, por exemplo.
 </p><hr>
 
+<p>
+  <b>ViewChild()</b><br>
+  Esse decorator tem como objetivo nos permitir acesso aos templates no componente. Ou seja, podemos definir uma variável no componente que será a representação de um elemento html ou elementos angular. Veja o exemplo abaixo:<br>
+
+```typescript
+  /*
+    O decorator ViewChild() nos permite fazer uma associação entre do elemento hmtl ou angular que está no template do componente.
+    Para que possamos acessar seus métodos e propriedades disponíveis através do componente.
+
+    Para isso anotamos um atributo do componente com o decorator ViewChidl() que possui como argumento
+    o nome da variável de local que representa o elemento html/angular no template do componente.
+  */
+  @ViewChild('tagP') tagP: ElementRef;
+
+  public traduzir(): void {       
+    if(this.tagP.nativeElement.textContent.split(' ')[0] === 'viewchild')
+      this.tagP.nativeElement.textContent = 'Componente ViewChild operante!';
+    else 
+      this.tagP.nativeElement.textContent = 'viewchild works!';
+  }
+}
+```
+
+```html
+<!-- Variável local #tagP representa o elemento html p -->
+<p #tagP>viewchild works!</p>
+<button class="btn btn-primary" (click)=traduzir()>Traduzir</button>
+```
+
+</p>
