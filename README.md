@@ -516,4 +516,31 @@ export class OutputPropertyComponent implements OnInit {
 ```html
 <contador [valor]="valor" (valorAtual)="getValor($event)"></contador>
 ```
-</p>
+</p> <hr>
+
+<p>
+  <b>Ciclo de Vida do Angular</b><br>
+  Os componentes/diretivas no Angular possuem um ciclo de vida. Podem ser utilizados para momentos e tarefas específicas.<br>
+  Existem 8 métodos que compõem esse ciclo de vida, sendo eles: <br>
+
+  ngOnInit(): É executado somente uma vez, sempre na inicialização do componente/diretiva. Seja o mesmo tendo ou não input properties. Entretanto,
+  caso o componente/diretiva possua input properties e as mesmas sofram atualizações na inicizalização,
+  este método será executado após a execução do ngOnChanges()<br>
+
+  ngOnChanges(): É executado sempre que existe uma atualização das inputs properties. Caso não exista ou as inputs properties não sejam alterdas
+  esse método do ciclo de vida não será executado.<br>
+
+  ngDoCheck(): É executado quando o ngOnChanges não consegue identificar as mudanças sozinho. Ou seja, de propriedades do componente/deretivas que não
+  são input properties. <br>
+
+  ngAfterContentInit(): É executado apenas uma vez após o ngDoCheck(). Depois que os dados são renderizados no template pela primeira vez, esse método é chamado. <br>
+
+  ngAfterContentChecked(): É executado sempre após a cada execução do ngDoCheck(). É executado toda vez que após Angular renderizar os dados no template.
+
+  ngAfterViewInit(): É executado apenas uma vez após o ngAfterContentChecked(). É executado após o Angular inicializar as viusualizações do componente e as visualizações filhas<br>
+
+  ngAfterViewChecked(): É executado sempre após ngAfterViewInit() e todos os subsequentes ngAfterContentChecked(). Após o Angular verificar as visualizações do componente e as visualizações filhas<br>
+
+  ngOnDestroy(): É executado imediatamente após da destruição do componente/diretiva. Tem como um dos seus principais objetivos ser o método do ciclo de vida para se desinscrever de observables, por exemplo.
+</p><hr>
+
