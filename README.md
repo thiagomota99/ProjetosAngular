@@ -326,4 +326,68 @@ export class PropertyBindingComponent implements OnInit {
 </div>
  ```
 
+ <b>Exemplos de Event Binding: </b>
+ 
+ ```typescript
+  import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-event-binding',
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.css']
+})
+export class EventBindingComponent implements OnInit {
+
+  private _textoInput: string = '';
+  get textoInput(): string {
+    return this._textoInput;
+  }
+  public formasDeEventBinding: string[] = [
+    `<input type="text" (keyup)="getTextoInput($event)">`,
+    `<input type="text" (keyup)="getTextoInput($event.target.value)">`,
+    `<input #inputV type="text" (keyup)="getTextoInput(inputV)">`,
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public clickButton(): void {
+    alert('Fui clicado!');
+  }
+
+  public getTextoInput(texto): void {
+    this._textoInput = texto;
+  }
+
+}
+ ```
+
+ ```html
+<h2>Event Binding</h2>
+<p>
+    O Event bindig é utilizado para escutarmos eventos realizados pelas tags no template do componente. <br>
+    Aqui estão alguns exemplos de como implementa-lo: <br>
+
+    <!-- Escutando o evento de click do botão.-->
+    <button class="btn btn-primary" (click)="clickButton()">Me Clique!</button> <br>
+    <label for="texto">Texto Digitado</label> <br>
+    <input type="text" disabled [value]="textoInput"> <br>
+    <!-- Escutando o evento onkeyup do input-->
+    <input type="text" (keyup)="getTextoInput($event.target.value)">
+</p>
+<div>
+    O evento podem ser "escutados" de várias formas. <br>
+    Exemplos:
+    <ul>
+        <li *ngFor="let forma of formasDeEventBinding">{{ forma }}</li>
+    </ul>
+    <p>
+        A variável $event.target.value pode ser substituído por apenas uma variável de ambiente definida no elemento hmtl <br>
+        como mostrado na 3º forma.
+    </p>
+</div>
+ ```
+
 </p>
