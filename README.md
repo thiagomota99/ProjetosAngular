@@ -389,5 +389,47 @@ export class EventBindingComponent implements OnInit {
     </p>
 </div>
  ```
+Exemplos de Two-way Data Binding:
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-two-way-data-binding',
+  templateUrl: './two-way-data-binding.component.html',
+  styleUrls: ['./two-way-data-binding.component.css']
+})
+export class TwoWayDataBindingComponent implements OnInit {
+
+  public nome = 'Fulano';
+  public idade = '33';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+```html
+<div>
+    <h2>Two-way Data Binding</h2>
+    <p>
+        Tem como objetivo atualizar o as informações do template e do seu respectivo componente ao mesmo tempo. <br>
+        Essa abordagem é muito utilizado em formulários. Onde precisamos associar vários campos para no fim submete-los <br>
+        Veja alguns exemplos agora de como implementar:
+    </p>
+    <p>Meu nome é {{ nome }} e tenho {{ idade }} anos de idade.</p>
+    Nome: <input type="text" [(ngModel)]="nome"> Idade: <input [(ngModel)]="idade">
+</div>
+
+<div>
+    <blockquote>
+        Obs: Para usar a diretiva ngModel é necessário que o módulo ao qual o componente está declado, tenha em seu escopo de imports <br>
+        o módulo FormsModule, pois sem isso o mesmo não irá identificar o ngModel como uma propriedade do elemento onde está sendo utilizado.
+    </blockquote>
+</div>
+```
 
 </p>
