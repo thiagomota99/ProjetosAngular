@@ -2,3 +2,5 @@
 <!--app-property-binding></app-property-binding-->
 <!--app-event-binding></app-event-binding-->
 <!--app-two-way-data-binding></app-two-way-data-binding-->
+<!--app-input-property [mensagem]="mensagem"></app-input-property-->
+<contador [valor]="valor" (valorAtual)="getValor($event)"></contador>

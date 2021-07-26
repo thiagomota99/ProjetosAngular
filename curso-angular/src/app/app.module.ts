@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
 import { DataBindingModule } from './data-binding/data-binding.module';
+import { InputAndOutputPropertiesModule } from './input-and-output-properties/input-and-output-properties.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { DataBindingModule } from './data-binding/data-binding.module';
     BrowserModule,
     CursosModule,
     DataBindingModule,
+    InputAndOutputPropertiesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -431,5 +431,89 @@ export class TwoWayDataBindingComponent implements OnInit {
     </blockquote>
 </div>
 ```
+</p>
+<hr>
 
+<p>
+  Input/Output properties <br>
+  Esses dois conceitos bastante utilizados no Angular tem como o principal objetivo o reaproveitamento de componentes. <br>
+  Onde é possível criar para os componentes propriedades e eventos customizados assim como as das tags html.
+
+  Veja um exemplo de Input Property:
+
+```typescript
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-input-property',
+  templateUrl: './input-property.component.html',
+  styleUrls: ['./input-property.component.css']
+})
+export class InputPropertyComponent implements OnInit {
+
+  /*
+    Anotamos o atributo da classe com o decarator @Input() que nos permite
+    exportar essa propriedade do component.
+    O decarator pode receber um parâmetro que será o nome da propriedade exportada,
+    caso não seja definido nenhum, terá o mesmo nome da propriedade do componente.
+  */
+  @Input('mensagem') mensagemAprensentacao = '';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+```html
+<app-input-property [mensagem]="mensagem"></app-input-property>
+```
+
+Enquanto o Input Property tem como objetivo receber algum dado do componente pai (componente no qual possui outro em seu template) <br>
+O <b>Output Property</b> faz o caminho inverso. Emite os dados para o seu componente pai. Veja o exemplo abaixo:
+
+```typescript
+import { Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'contador',
+  templateUrl: './output-property.component.html',
+  styleUrls: ['./output-property.component.css']
+})
+export class OutputPropertyComponent implements OnInit {
+
+  @Input() valor = 0;
+
+  /*
+    Output() é o decorator que tem como objetivo exportar um evento do componente.
+    Com isso podemos emitir qualquer que seja o valor para o componente pai que está
+    escutando esse evento.    
+  */
+  @Output() valorAtual = new EventEmitter<number>();
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public incrementar(): void {
+    this.valor++;
+    this.valorAtual.emit(this.valor); //O método emit da classe EventEmiiter tem como objetivo emitir de fato 
+                                      //o valor do evento.
+  }
+
+  public decrementar(): void {
+    this.valor--;
+    this.valorAtual.emit(this.valor);
+  }
+
+}
+```
+
+```html
+<contador [valor]="valor" (valorAtual)="getValor($event)"></contador>
+```
 </p>
