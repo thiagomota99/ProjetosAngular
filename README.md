@@ -572,5 +572,46 @@ export class OutputPropertyComponent implements OnInit {
 <p #tagP>viewchild works!</p>
 <button class="btn btn-primary" (click)=traduzir()>Traduzir</button>
 ```
+</p><hr>
+
+<p>
+  <b>O que são diretivas?</b><br>
+  Diretivas são instruções, são componentes que não possuem template. As mesmas tem como objetivo alterar a estrutura do DOM (Diretivas Estruturais) ou interagir com os elementos dispostos no template (Diretivas de Atributos). Veja alguns exemplos de diretivas e seus tipos.<br>
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ngif',
+  templateUrl: './ngif.component.html',
+  styleUrls: ['./ngif.component.css']
+})
+export class NgifComponent implements OnInit {
+  
+  public isConstruirComponente = true;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public buildOrDestroy(): void {
+    this.isConstruirComponente = !this.isConstruirComponente;
+  }
+
+}
+```
+
+```html
+<!-- 
+    A diretiva ngIf recebe como valor uma expressão booleana. Esta diretiva é mais utilizada
+    quando precisamos decidir por criar uma árvore de elementos ou não. Já que caso não seja
+    necessário a construção do elementos o mesmo com ngIf não fará. Também utilizado em momentos
+    que a não exibição de certos componentes/elementos seja por uma questão de segurança. Exemplo
+    uma informação que só deve ser vizualida por um determinado perfil de usuário. Em casos que esses
+    cenários não apareçam opte por utilizar o atributo hidden dos elementos.
+-->
+<p *ngIf="isConstruirComponente">O componente ngif está operante</p>
+<button class="btn btn-primary" (click)="buildOrDestroy()">Hidden/Show</button>
+```
 
 </p>

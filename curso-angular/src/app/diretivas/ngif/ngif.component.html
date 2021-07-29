@@ -1,0 +1,9 @@
+<!-- 
+    A diretiva ngIf recebe como valor uma expressão booleana. Esta diretiva é mais utilizada
+    quando precisamos decidir por criar uma árvore de elementos ou não. Já que caso não seja
+    necessário a construção do elementos o mesmo com ngIf não fará. Também utilizado em momentos
+    que a não exibição de certos componentes/elementos seja por uma questão de segurança. Exemplo
+    uma informação que só deve ser vizualida por um determinado perfil de usuário.
+-->
+<p *ngIf="isConstruirComponente">O componente ngif está operante</p>
+<button class="btn btn-primary" (click)="buildOrDestroy()">Hidden/Show</button>

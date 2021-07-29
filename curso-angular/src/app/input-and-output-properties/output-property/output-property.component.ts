@@ -25,7 +25,7 @@ export class OutputPropertyComponent implements OnInit {
   public incrementar(): void {
     this.valor++;
     this.valorAtual.emit(this.valor); //O método emit da classe EventEmiiter tem como objetivo emitir de fato 
-                                      //o valor do evento.
+    //o valor do evento.
   }
 
   public decrementar(): void {
