@@ -614,4 +614,45 @@ export class NgifComponent implements OnInit {
 <button class="btn btn-primary" (click)="buildOrDestroy()">Hidden/Show</button>
 ```
 
+<b>Diretiva ngSwitch</b>
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ngswitch',
+  templateUrl: './ngswitch-case.component.html',
+  styleUrls: ['./ngswitch-case.component.css']
+})
+export class NgswitchCaseComponent implements OnInit {
+
+  public aba: string = 'Home';
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+```html
+<!-- 
+    A diretiva ngSwitch tem como objetivo representar a estrutura condicional da programação switch.
+    Onde em nosso caso a mesma espera como valor uma expressão, seja o retorno de um método ou variável.
+    É uma diretiva estrutural, assim como o *ngIf. Portanto tenha o mesmo cuidado ao utiliza-la.
+-->
+<div [ngSwitch]="aba">
+    <p *ngSwitchCase="'Work'">
+        a aba {{ aba }} está ativa!
+    </p>
+    <p *ngSwitchCase="'University'">
+        a aba {{ aba }} está ativa!
+    </p>
+    <p *ngSwitchDefault>
+        a aba {{ aba }} está ativa!
+    </p>
+</div>
+```
+
 </p>

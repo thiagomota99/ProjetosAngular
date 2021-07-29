@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">NgSwitch</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item" 
+            [class.active]="aba === 'Home'"
+            (click)="aba = 'Home'"
+        >
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" 
+            [class.active]="aba === 'Work'"
+            (click)="aba = 'Work'"
+        >
+          <a class="nav-link">Work</a>
+        </li>
+        <li class="nav-item" 
+            [class.active]="aba === 'University'"
+            (click)="aba = 'University'"
+        >
+          <a class="nav-link">University</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<!-- 
+    A diretiva ngSwitch tem como objetivo representar a estrutura condicional da programação switch.
+    Onde em nosso caso a mesma espera como valor uma expressão, seja o retorno de um método ou variável.
+    É uma diretiva estrutural, assim como o *ngIf. Portanto tenha o mesmo cuidado ao utiliza-la.
+-->
+<div [ngSwitch]="aba">
+    <p *ngSwitchCase="'Work'">
+        a aba {{ aba }} está ativa!
+    </p>
+    <p *ngSwitchCase="'University'">
+        a aba {{ aba }} está ativa!
+    </p>
+    <p *ngSwitchDefault>
+        a aba {{ aba }} está ativa!
+    </p>
+</div>
