@@ -654,5 +654,39 @@ export class NgswitchCaseComponent implements OnInit {
     </p>
 </div>
 ```
+<b>Diretiva ngFor</b>
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ngfor',
+  templateUrl: './ngfor.component.html',
+  styleUrls: ['./ngfor.component.css']
+})
+export class NgforComponent implements OnInit {
+
+  public cursos: string[] = ['Angular','Java','MySQL'];
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+```html
+<!-- 
+A diretiva *ngFor é uma diretiva estrutural do Angular. Onde seu objetivo é criar uma estrutura de repetição
+semelhante ao for
+-->
+<div>
+    <p>Lista de cursos</p>
+    <ul>
+        <li *ngFor="let curso of cursos, let i = index"> {{ i + 1 }} {{ curso }}</li>
+    </ul>
+</div>
+```
 
 </p>

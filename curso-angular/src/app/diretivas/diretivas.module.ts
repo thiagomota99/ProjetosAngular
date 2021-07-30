@@ -2,17 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgifComponent } from './ngif/ngif.component';
 import { NgswitchCaseComponent } from './ngswitch-case/ngswitch-case.component';
+import { NgforComponent } from './ngfor/ngfor.component';
 
 
 
 @NgModule({
   declarations: [
     NgifComponent,
-    NgswitchCaseComponent
+    NgswitchCaseComponent,
+    NgforComponent
   ],
   exports: [
     NgifComponent,
-    NgswitchCaseComponent
+    NgswitchCaseComponent,
+    NgforComponent,
   ],
   imports: [
     CommonModule
