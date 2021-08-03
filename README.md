@@ -688,5 +688,61 @@ semelhante ao for
     </ul>
 </div>
 ```
+<b>Diretiva ngClass<b>
+
+```typescript
+  import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ng-class',
+  templateUrl: './ng-class.component.html',
+  styleUrls: ['./ng-class.component.css']
+})
+export class NgClassComponent implements OnInit {
+
+  public preencherLua: boolean = false;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public onClick(): void {
+    this.preencherLua = !this.preencherLua;
+  }
+
+}
+```
+
+```html
+<p>
+   A diretiva [ngClass] tem como objetivo agregar no quesito legibilidade. 
+   Tem o mesmo objetivo do binding de classes, entretanto melhorando legibilidade.
+</p>
+
+<p>
+    <i [ngClass]="{
+        'bi bi-moon-stars' : !preencherLua,
+        'bi-moon-stars-fill' : preencherLua}"
+       (click)="onClick()">
+    </i>
+</p>
+
+<!--
+    <p>
+        <i [ngClass]="{
+            'bi bi-moon-stars' : !preencherLua,
+            'bi-moon-stars-fill' : preencherLua}"
+        (click)="onClick()">
+        </i>
+    </p>
+
+    A diretiva ngClass recebe um objeto com os nomes das classes que deverão ser aplicadas
+    juntamente com a expressão que vai permitir que as mesmas sejam aplicadas ao elemento html/angular.
+
+    ngClass= {
+        'nome-da-classe' : expressao
+    }
+-->
+```
 
 </p>
