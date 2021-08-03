@@ -4,6 +4,12 @@
     necessário a construção do elementos o mesmo com ngIf não fará. Também utilizado em momentos
     que a não exibição de certos componentes/elementos seja por uma questão de segurança. Exemplo
     uma informação que só deve ser vizualida por um determinado perfil de usuário.
+    
 -->
 <p *ngIf="isConstruirComponente">O componente ngif está operante</p>
+<h2>NgIf sem a utilização do *</h2>
+
+<ng-template [ngIf]="isConstruirComponente">
+    <p>O componente ngif está operante</p>
+</ng-template>
 <button class="btn btn-primary" (click)="buildOrDestroy()">Hidden/Show</button>
