@@ -4,6 +4,7 @@ import { NgifComponent } from './ngif/ngif.component';
 import { NgswitchCaseComponent } from './ngswitch-case/ngswitch-case.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
 
 
 
@@ -12,13 +13,15 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     NgifComponent,
     NgswitchCaseComponent,
     NgforComponent,
-    NgClassComponent
+    NgClassComponent,
+    NgStyleComponent
   ],
   exports: [
     NgifComponent,
     NgswitchCaseComponent,
     NgforComponent,
     NgClassComponent,
+    NgStyleComponent,
   ],
   imports: [
     CommonModule

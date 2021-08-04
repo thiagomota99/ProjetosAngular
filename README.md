@@ -744,5 +744,52 @@ export class NgClassComponent implements OnInit {
     }
 -->
 ```
+<b>Diretiva ngStyle</b>
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ng-style',
+  templateUrl: './ng-style.component.html',
+  styleUrls: ['./ng-style.component.css']
+})
+export class NgStyleComponent implements OnInit {
+
+  public ativo: boolean = false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
+
+  onClick(): void {
+    this.ativo = !this.ativo;
+  }
+
+}
+```
+
+```html
+<p [ngStyle]="{
+    'backgroundColor': (ativo ? 'blue' : 'white'),
+    'color': (ativo ? 'white' : 'black')
+    }">
+Utilizando a diretiva ngStyle <br>
+A diretiva ngStyle é utilizada para aplicar várias propriedades em um lugar só
+Diferenciado-se do StyleBinding onde para cada propriedades que queremos colocar
+preciasmos de um: [style.nome-da-propriedade]. Com o ngStyle o mesmo espera um objeto onde
+podemos atribuir todas as propriedades que quisermos Ex:<br>
+<!--[ngStyle]="{
+    'backgroundColor': (ativo ? 'blue' : 'white'),
+    'color': (ativo ? 'white' : 'black')
+    }"<br>-->
+O primeiro parâmetro é o nome da propriedade o segundo (após o ponto e vírgula) é expressão na
+qual será definido o valor que a propriedade deve assumir.
+</p>
+
+<button class="btn btn-primary" (click)="onClick()">Mudar Estilo</button>
+```
 
 </p>
