@@ -6,6 +6,8 @@ import { NgforComponent } from './ngfor/ngfor.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
+import { FundoAmareloDirective } from './fundo-amarelo.directive';
 
 
 
@@ -16,7 +18,9 @@ import { OperadorElvisComponent } from './operador-elvis/operador-elvis.componen
     NgforComponent,
     NgClassComponent,
     NgStyleComponent,
-    OperadorElvisComponent
+    OperadorElvisComponent,
+    NgContentComponent,
+    FundoAmareloDirective
   ],
   exports: [
     NgifComponent,
@@ -25,6 +29,8 @@ import { OperadorElvisComponent } from './operador-elvis/operador-elvis.componen
     NgClassComponent,
     NgStyleComponent,
     OperadorElvisComponent,
+    NgContentComponent,
+    FundoAmareloDirective,
   ],
   imports: [
     CommonModule

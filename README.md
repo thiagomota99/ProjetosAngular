@@ -814,4 +814,69 @@ que essa ausência de valor acarrete em erro. Veja um exemplo de como utilizar o
 <p>Professor: {{ disciplina.professor?.nome }}</p>
 ```
 
+<b>Compenente ng-content<b><br>
+Esse componente nativo do Angular tem como objetivo exibir o conteúdo que foi passado para o componente.
+Diferentemente das Input properties a informação é passado quando o conteúdo está dentro componente. Veja o exemplo
+para melhor entedimento:
+
+```html
+<!-- Template do componente <app-ng-content></app-ng-content> -->
+<div>
+    <h1>
+        <ng-content select=".titulo"></ng-content>
+    </h1>
+    <p>
+        <ng-content select=".explicacao"></ng-content>
+    </p>
+</div>
+
+<!-- Template de outro componente qualquer -->
+<app-ng-content>
+    <div class="titulo">ng-content</div>
+    <div class="explicacao">
+        Estou passando o conteúdo diretamente dentro da tag do componente app-ng-content. 
+        Não preciso mais passar através de uma Input property. Este conteúdo será reproduzido
+        dentro do componente substituindo a tag ng-content. Onde o valor da propriedade "select"
+        for igual ".explicacao". Enquanto a se a propriedade tiver o valor de ".titulo" irá substituir
+        pelo titulo passado na div logo acima.
+    </div>
+</app-ng-content>
+```
+
+<b>Diretiva Personalizada</b></br>
+O Angular nos possibilitar criarmos nossas próprias diretivas. Sejam elas de atributo ou estruturais.
+Nesse exemplo estarei mostrando a criação de uma diretiva de atributo que muda a cor de fundo do elemento em que está sendo utilizada
+para amarelo:
+
+```typescript
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+
+
+/*Decorator que define que a classe será uma diretiva*/
+@Directive({
+  selector: 'p[fundoAmarelo]' //nome da diretiva. Caso queira definir também em quais elementos a diretiva poderá ser aplicada.
+                              //No nosso caso a diretiva só será aplicada em tags <p></p>
+                              //Siga a sintaxe: elemento-que-pode-ser-aplicada[nome-da-diretiva]
+})
+export class FundoAmareloDirective {
+
+  //Utilizando a injeção de dependência para ter acesso ao elemento na qual
+  //a diretiva está sendo utilizada.
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    /*
+      As duas abordagens estão corretas, entretanto uma é mais segura que a outra.
+      Evitando ataques de XSS (Cross‑Site Scripting).
+    */
+   
+    //this._elementRef.nativeElement.style.backgroundColor = 'yellow';
+    this._renderer.setStyle(this._elementRef.nativeElement,'background-color','yellow');
+  }
+
+}
+```
+
+```html
+<p fundoAmarelo>Testando diretiva de atributo personalizada</p>
+```
+
 </p>
