@@ -1,0 +1,7 @@
+<h1>Sem a utilização do operador elvis</h1>
+<p>Disciplina: {{ disciplina.nome }}</p>
+<p>Professor: {{ disciplina.professor != null ? disciplina.professor.nome : ''}}</p>
+
+<h1>Utilizando Operador elvis</h1>
+<p>Disciplina: {{ disciplina.nome }}</p>
+<p>Professor: {{ disciplina.professor?.nome }}</p>

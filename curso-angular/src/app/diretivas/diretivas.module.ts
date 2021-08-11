@@ -5,6 +5,7 @@ import { NgswitchCaseComponent } from './ngswitch-case/ngswitch-case.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 
 
 
@@ -14,7 +15,8 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     NgswitchCaseComponent,
     NgforComponent,
     NgClassComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    OperadorElvisComponent
   ],
   exports: [
     NgifComponent,
@@ -22,6 +24,7 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     NgforComponent,
     NgClassComponent,
     NgStyleComponent,
+    OperadorElvisComponent,
   ],
   imports: [
     CommonModule

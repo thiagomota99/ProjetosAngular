@@ -792,4 +792,26 @@ qual será definido o valor que a propriedade deve assumir.
 <button class="btn btn-primary" (click)="onClick()">Mudar Estilo</button>
 ```
 
+<b>Operador Elvis</b><br>
+O operador Elvis é uma maneira de navegar nas propriedades dos objetos. Onde caso uma propriedade
+exista a possibilidade de não possuir valor (null ou undefined) o operador elvis vai nos garantir
+que essa ausência de valor acarrete em erro. Veja um exemplo de como utilizar o operador:
+
+```javascript
+  public disciplina:any = {
+    nome: 'Matemática',
+    professor: null
+  };
+```
+
+```html
+<h1>Sem a utilização do operador elvis</h1>
+<p>Disciplina: {{ disciplina.nome }}</p>
+<p>Professor: {{ disciplina.professor != null ? disciplina.professor.nome : ''}}</p>
+
+<h1>Utilizando Operador elvis</h1>
+<p>Disciplina: {{ disciplina.nome }}</p>
+<p>Professor: {{ disciplina.professor?.nome }}</p>
+```
+
 </p>
