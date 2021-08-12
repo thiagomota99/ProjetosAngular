@@ -39,3 +39,36 @@ para receberem os valores dos atributos/métodos do componente.
 
 > Para melhor entendimento dos tipos de Data Binding procure pelo diretório data-binding. 
 > Dentro dele estão subdiretórios com os componentes exemplificando as 4 abordagens.
+
+<hr>
+
+## Input/Output Properties
+Esses dois conceitos bastante utilizados no Angular tem como o principal objetivo o reaproveitamento de componentes.
+Onde é possível criar para os componentes propriedades e eventos customizados assim como as das tags html. Para mais detalhes
+de como implementar esses conceito procure pelo diretório `input-and-output-properties\input-property` e `input-and-output-properties\output-property`
+
+<hr>
+
+## Ciclo de Vida do Angular
+Os componentes/diretivas no Angular possuem um ciclo de vida. Podem ser utilizados para momentos e tarefas específicas.
+Existem 8 métodos que compõem esse ciclo de vida, sendo eles:
+
+* ngOnInit(): É executado somente uma vez, sempre na inicialização do componente/diretiva. Seja o mesmo tendo ou não input properties. Entretanto,
+caso o componente/diretiva possua input properties e as mesmas sofram atualizações na inicizalização,
+este método será executado após a execução do `ngOnChanges()`<br>
+
+* ngOnChanges(): É executado sempre que existe uma atualização das inputs properties. Caso não exista ou as inputs properties não sejam alterdas
+esse método do ciclo de vida não será executado.<br>
+
+* ngDoCheck(): É executado quando o `ngOnChanges()` não consegue identificar as mudanças sozinho. Ou seja, de propriedades do componente/deretivas que não
+são input properties. <br>
+
+* ngAfterContentInit(): É executado apenas uma vez após o `ngDoCheck()`. Depois que os dados são renderizados no template pela primeira vez, esse método é chamado. <br>
+
+* ngAfterContentChecked(): É executado sempre após a cada execução do `ngDoCheck()`. É executado toda vez que após Angular renderizar os dados no template.
+
+* ngAfterViewInit(): É executado apenas uma vez após o `ngAfterContentChecked()`. É executado após o Angular inicializar as viusualizações do componente e as visualizações filhas<br>
+
+* ngAfterViewChecked(): É executado sempre após `ngAfterViewInit()` e todos os subsequentes `ngAfterContentChecked()`. Após o Angular verificar as visualizações do componente e as visualizações filhas<br>
+
+* ngOnDestroy(): É executado imediatamente após da destruição do componente/diretiva. Tem como um dos seus principais objetivos ser o método do ciclo de vida para se desinscrever de observables, por exemplo.
