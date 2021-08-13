@@ -39,6 +39,7 @@ import { NgElseDirective } from './diretivas-personalizadas/ng-else.directive';
     FundoAmareloDirective,
     HighlightMouseDirective,
     HighlightDirective,
+    NgElseDirective,
   ],
   imports: [
     CommonModule
