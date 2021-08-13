@@ -75,11 +75,16 @@ são input properties. <br>
 
 <hr>
 
+## O que são Diretivas?
+Diretivas são instruções, componentes que não possuem template. As mesmas tem como objetivo alterar a estrutura do DOM (Diretivas Estruturais) ou interagir com os elementos dispostos no template (Diretivas de Atributos). Para mais detalhes de como implementar o conceito de Diretivas, procure pelo diretório `diretivas`.
+
+<hr>
+
 ## Tabela de decorators Angular
 
 Decorator   | Objetivo
 ---------   | --------
 Input()     | Tem como objetivo expor o atributo do componente para receber valores externos
 Output()    | Tem como objetivo expor eventos do componentes para serem recebidos por componentes externos
-Viewchild() | Permitir acesso aos templates dos componentes. Ou seja, podemos definir um atributo no componente que será a representação de um elemento html/angular.
+Viewchild() | Permitir acesso aos templates dos componentes. Ou seja, podemos definir um atributo no componente que será a representação de um elemento html/angular
 
