@@ -72,3 +72,12 @@ são input properties. <br>
 * ngAfterViewChecked(): É executado sempre após `ngAfterViewInit()` e todos os subsequentes `ngAfterContentChecked()`. Após o Angular verificar as visualizações do componente e as visualizações filhas<br>
 
 * ngOnDestroy(): É executado imediatamente após da destruição do componente/diretiva. Tem como um dos seus principais objetivos ser o método do ciclo de vida para se desinscrever de observables, por exemplo.
+
+<hr>
+
+## Tabela de decorators Angular
+
+Decarator | Objetivo
+--------- | --------
+Input()   | Tem como objetivo expor o atributo do componente para receber valores externos
+Output()  | Tem como objetivo expor eventos do componentes para serem recebidos por componentes externos
