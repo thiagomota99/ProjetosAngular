@@ -86,5 +86,5 @@ Decorator   | Objetivo
 ---------   | --------
 Input()     | Tem como objetivo expor o atributo do componente para receber valores externos
 Output()    | Tem como objetivo expor eventos do componentes para serem recebidos por componentes externos
-Viewchild() | Permitir acesso aos templates dos componentes. Ou seja, podemos definir um atributo no componente que será a representação de um elemento html/angular
+Viewchild() | Permitir acesso aos templates dos componentes. Ou seja, podemos definir um atributo no componente que será a representação de um elemento html/angular.
 
