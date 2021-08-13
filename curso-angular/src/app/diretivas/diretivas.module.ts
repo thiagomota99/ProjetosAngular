@@ -7,9 +7,10 @@ import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
-import { FundoAmareloDirective } from './fundo-amarelo.directive';
-import { HighlightMouseDirective } from './highlight-mouse.directive';
-import { HighlightDirective } from './highlight.directive';
+import { FundoAmareloDirective } from './diretivas-personalizadas/fundo-amarelo.directive';
+import { HighlightMouseDirective } from './diretivas-personalizadas/highlight-mouse.directive';
+import { HighlightDirective } from './diretivas-personalizadas/highlight.directive';
+import { NgElseDirective } from './diretivas-personalizadas/ng-else.directive';
 
 
 
@@ -24,7 +25,8 @@ import { HighlightDirective } from './highlight.directive';
     NgContentComponent,
     FundoAmareloDirective,
     HighlightMouseDirective,
-    HighlightDirective
+    HighlightDirective,
+    NgElseDirective
   ],
   exports: [
     NgifComponent,
