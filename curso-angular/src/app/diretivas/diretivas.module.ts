@@ -7,10 +7,7 @@ import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
-import { FundoAmareloDirective } from './diretivas-personalizadas/fundo-amarelo.directive';
-import { HighlightMouseDirective } from './diretivas-personalizadas/highlight-mouse.directive';
-import { HighlightDirective } from './diretivas-personalizadas/highlight.directive';
-import { NgElseDirective } from './diretivas-personalizadas/ng-else.directive';
+import { DiretivasPersonalizadasModule } from './diretivas-personalizadas/diretivas-perseronalizadas.module';
 
 
 
@@ -23,10 +20,7 @@ import { NgElseDirective } from './diretivas-personalizadas/ng-else.directive';
     NgStyleComponent,
     OperadorElvisComponent,
     NgContentComponent,
-    FundoAmareloDirective,
-    HighlightMouseDirective,
-    HighlightDirective,
-    NgElseDirective
+
   ],
   exports: [
     NgifComponent,
@@ -35,14 +29,11 @@ import { NgElseDirective } from './diretivas-personalizadas/ng-else.directive';
     NgClassComponent,
     NgStyleComponent,
     OperadorElvisComponent,
-    NgContentComponent,
-    FundoAmareloDirective,
-    HighlightMouseDirective,
-    HighlightDirective,
-    NgElseDirective,
+    NgContentComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DiretivasPersonalizadasModule
   ]
 })
 export class DiretivasModule { }

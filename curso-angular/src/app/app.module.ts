@@ -6,6 +6,8 @@ import { CursosModule } from './cursos/cursos.module';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { DiretivasModule } from './diretivas/diretivas.module';
 import { InputAndOutputPropertiesModule } from './input-and-output-properties/input-and-output-properties.module';
+import { FirstServiceService } from './servicos/first-service.service';
+import { ServicosModule } from './servicos/servicos.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { InputAndOutputPropertiesModule } from './input-and-output-properties/in
     CursosModule,
     DataBindingModule,
     InputAndOutputPropertiesModule,
-    DiretivasModule
+    DiretivasModule,
+    ServicosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

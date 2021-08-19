@@ -80,6 +80,11 @@ Diretivas são instruções, componentes que não possuem template. As mesmas te
 
 <hr>
 
+## O que são Serviços?
+Serviços em Angular são classes que tem como objetivo conter a regra de negócio da aplicação. Ela que possui também o conhcimento para buscar os dados e fornecer para ao sistema. Por fim podem ser entidades que fornce métodos utilizados por todoa aplicação. Como a formatação de dados para um formato específcio, antes mesmo de serem exibidos. Para mais detalhes e exemplos de como aplicar este conceito no Angular, procure pelo no projeto pelo diretório `servicos`.
+
+<hr>
+
 ## Tabela de decorators Angular
 
 Decorator   | Objetivo
