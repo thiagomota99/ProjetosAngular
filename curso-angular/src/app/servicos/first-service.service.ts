@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from "@angular/core";
+import { LogService } from "../shared/log.service";
 
 //O Decorator Injetable() indica que a classe é um serviço, e poderá ser instanciada, através da INJEÇÃO DE DEPENDÊNCIA
 @Injectable()
@@ -16,7 +17,8 @@ export class FirstServiceService {
 
   private cursos: string[] = ['Angular','Java','JavaScript'];
 
-  constructor() {
+  //Injentando um serviço dentro de outro serviço
+  constructor(private readonly logService: LogService) {
     console.log('FirstServiceService');
   }
 
@@ -35,11 +37,13 @@ export class FirstServiceService {
 
   //Método que a lista de cursos
   getCursos(): string[] {
+    this.logService.getMessage('Retornando lista de cursos');
     return this.cursos;
   }
 
   //Método para adicionar um novo curso
   addCursos(curso:string): void {
+    this.logService.getMessage('Criando um novo curso');
     FirstServiceService.ultimoCursoCriado.emit(curso);
     this.cursos.push(curso);    
   }
