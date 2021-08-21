@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListarCursosComponent } from './consumidores-do-servico/listar-cursos/listar-cursos.component';
 import { CriarCursosComponent } from './consumidores-do-servico/criar-cursos/criar-cursos.component';
 import { FirstServiceService } from './first-service.service';
+import { UltimoCursoCriadoComponent } from './consumidores-do-servico/ultimo-curso-criado/ultimo-curso-criado.component';
 
 
 
@@ -10,10 +11,12 @@ import { FirstServiceService } from './first-service.service';
   declarations: [
     ListarCursosComponent,
     CriarCursosComponent,
+    UltimoCursoCriadoComponent,
   ],
   exports: [
     ListarCursosComponent,
     CriarCursosComponent,
+    UltimoCursoCriadoComponent,
   ],
   imports: [
     CommonModule

@@ -1,0 +1,9 @@
+<div *ngIf="curso">
+    <h2>Último Curso criado...</h2>
+    <p>{{ curso }} </p>
+
+    <ul>
+        <li *ngFor="let curso of cursos">{{ curso }}</li>
+    </ul>
+</div>
+

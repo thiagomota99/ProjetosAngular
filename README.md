@@ -81,7 +81,24 @@ Diretivas são instruções, componentes que não possuem template. As mesmas te
 <hr>
 
 ## O que são Serviços?
-Serviços em Angular são classes que tem como objetivo conter a regra de negócio da aplicação. Ela que possui também o conhcimento para buscar os dados e fornecer para ao sistema. Por fim podem ser entidades que fornce métodos utilizados por todoa aplicação. Como a formatação de dados para um formato específcio, antes mesmo de serem exibidos. Para mais detalhes e exemplos de como aplicar este conceito no Angular, procure pelo no projeto pelo diretório `servicos`.
+Serviços em Angular são classes que tem como objetivo conter a regra de negócio da aplicação. Ela que possui também o conhcimento para buscar os dados e fornecer para ao sistema. Por fim, podem ser entidades que fornecem métodos utilizados por todoa aplicação. Como a formatação de dados para um formato específcio, antes mesmo de serem exibidos. Para a utilização dos serviços podemos utiliza-los aplicando dois padrões: o **Singleton** ou **várias instâncias**. Explicando os padrões abaixo:
+
+* Padrão Singleton: É o padrão onde utilizamos apenas uma instância do serviço para toda a aplicação. Ou seja, os componentes A,B,C,D...N compartilharão a instância desse serviço. Portanto, as propriedades do serviço que sofrerem alguma alteração. Esta alteração será refletida em outros componentes que por ventura estejam fazendo uso dessa propriedade. 
+
+> Para um exemplo prático desse padrão, procure pelo diretório `src\app\servicos\consumidores-do-servico` lá irá encontrar os componentes `criar-cursos` e `listar-cursos`.
+> descomente as linhas **31** e **33** no arquivo `app.component.html` e execute o projeto.
+
+* Várias intâncias: É o padrão onde utilizamos várias instâncias do serviço. Ou seja, os componentes A,B,C,D...N possuem cada um sua própria instância, por consequência qualquer alteração de propriedade(s) em uma dessas instâncias, não será refletido nas outras. Já que são referências em memória distintas de um mesmo serviço.
+
+> Para um exemplo prático desse padrão, procure pelo diretório `src\app\servicos\consumidores-do-servico` lá irá encontrar o componente `ultimo-curso-criado`. Analise o código, 
+> descomente as linhas **31** ao **33** no arquivo `app.component.html` e execute o projeto.
+
+### Escopo de Serviços
+Escopo     | Exemplos
+-----------| --------
+Global     | Declare o serviço na propriedade `providers` no módulo de entrada da aplicação `AppModule` Ex: `providers: [NomeDoServicoService]`. Assim todos os módulos e seus respectivos componentes terão acesso a instância do serviço.
+Módulo     | Declare o serviço na propriedade `providers` apenas no módulo onde o mesmo será utilizado. Todos os componentes daquele módulo terão compartilharão a mesma instância do serviço.
+Componente | Declare o serviço na propriedade `providers` no decorator `@Component` do seu componente. O componente terá uma instância do serviço e todos seus componentes filhos compartilharão da mesma instância. Ex: procure no projeto pelo arquivo `ultimo-curso-criado.component.ts`
 
 <hr>
 

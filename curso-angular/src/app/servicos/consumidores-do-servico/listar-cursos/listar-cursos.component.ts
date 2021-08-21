@@ -5,9 +5,6 @@ import { FirstServiceService } from '../../first-service.service';
   selector: 'listar-cursos',
   templateUrl: './listar-cursos.component.html',
   styleUrls: ['./listar-cursos.component.css'],
-  providers: [
-    FirstServiceService
-  ]
 })
 export class ListarCursosComponent implements OnInit {
 
@@ -17,6 +14,7 @@ export class ListarCursosComponent implements OnInit {
   constructor(private firstService: FirstServiceService) { }
 
   ngOnInit(): void {
+    //Pegando o array de cusrsos do serviço e atribuindo ao atributo do componente.
     this.cursos = this.firstService.getCursos();
   }
 
