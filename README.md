@@ -101,7 +101,7 @@ Módulo     | Declare o serviço na propriedade `providers` apenas no módulo on
 Componente | Declare o serviço na propriedade `providers` no decorator `@Component` do seu componente. O componente terá uma instância do serviço e todos seus componentes filhos compartilharão da mesma instância. Ex: procure no projeto pelo arquivo `ultimo-curso-criado.component.ts`
 
 
-> **Caso queira utilizar o padrão de várias intâncias e em algum momento queira emitir os valores de uma para outra. Utilize propriedades /e/ou métodos staticos. Os mesmos**
+> **Caso queira utilizar o padrão de várias intâncias e em algum momento queira emitir os valores de uma para outra. Utilize propriedades /e/ou métodos estáticos. Os mesmos**
 > **serão compartilhados por todas as intâncias do serviço**.
 
 <hr>
