@@ -100,6 +100,10 @@ Global     | Declare o serviço na propriedade `providers` no módulo de entrada
 Módulo     | Declare o serviço na propriedade `providers` apenas no módulo onde o mesmo será utilizado. Todos os componentes daquele módulo compartilharão a mesma instância do serviço.
 Componente | Declare o serviço na propriedade `providers` no decorator `@Component` do seu componente. O componente terá uma instância do serviço e todos seus componentes filhos compartilharão da mesma instância. Ex: procure no projeto pelo arquivo `ultimo-curso-criado.component.ts`
 
+
+> **Caso queira utilizar o padrão de várias intâncias e em algum momento queira emitir os valores de uma para outra. Utilize propriedades /e/ou métodos staticos. Os mesmos**
+> **serão compartilhados por todas as intâncias do serviço**.
+
 <hr>
 
 ## Tabela de decorators Angular
