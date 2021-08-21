@@ -97,7 +97,7 @@ Serviços em Angular são classes que tem como objetivo conter a regra de negóc
 Escopo     | Exemplos
 -----------| --------
 Global     | Declare o serviço na propriedade `providers` no módulo de entrada da aplicação `AppModule` Ex: `providers: [NomeDoServicoService]`. Assim todos os módulos e seus respectivos componentes terão acesso a instância do serviço.
-Módulo     | Declare o serviço na propriedade `providers` apenas no módulo onde o mesmo será utilizado. Todos os componentes daquele módulo terão compartilharão a mesma instância do serviço.
+Módulo     | Declare o serviço na propriedade `providers` apenas no módulo onde o mesmo será utilizado. Todos os componentes daquele módulo compartilharão a mesma instância do serviço.
 Componente | Declare o serviço na propriedade `providers` no decorator `@Component` do seu componente. O componente terá uma instância do serviço e todos seus componentes filhos compartilharão da mesma instância. Ex: procure no projeto pelo arquivo `ultimo-curso-criado.component.ts`
 
 <hr>
