@@ -36,7 +36,10 @@
 </ul>
 
 <h1>Maneira Correta</h1>
-<p>Nunca utilize pipes para </p>
 <ul>
     <li *ngFor="let curso of obterCursos()">{{ curso }}</li>
 </ul>
+
+
+<h1>Utilizando o pipe assync</h1>
+<p>{{ valorAssync | async }}</p>

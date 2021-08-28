@@ -117,6 +117,7 @@ json          | Transforma o objeto para o formato json
 number        | Transforma o valor para numérico. Podemos passar alguns argumentos para esse pipe como número máximo de casas decimais Ex: `{{ numero | number:'1.1-2'}}`
 currency      | Transforma o valor para formato da moeda desejada: Real, dólar, euro... Ex: `{{ moeda | currency:'BRL' }}`
 date          | Transforma a data para o formato desejado Ex: `{{ data | date:'dd-MM-yyyy'}}`
+async         | Tem como objetivo exibir valores assíncronos no template assim que os mesmos chegarem para o atributo/metodo da classe do componente.
 
 Para mais detalhes de como implementar os pipes acima... procure pelo diretório `src\app\pipes\exemplos-pipes` ou acesso o site <https://angular.io/api/common#pipes>
 
@@ -125,7 +126,7 @@ Para mais detalhes de como implementar os pipes acima... procure pelo diretório
 
 * Impuro: É o contrário do comportamento do pipe puro.
 
->Obs: Os pipes que foram criados para exemplificar os conceitos de Pipes puros e impuros são meramente exemplo.
+>Obs: Os pipes que foram criados para exemplificar os conceitos de Pipes puros e impuros são meramente exemplos.
 >**NÃO UTILIZE DE FORMA ALGUMA PIPES PARA ORDENAÇÃO OU FILTRO DE ARRAYS** faça isso utilizando métodos dentro da própria classe do componente.
 
 <hr>

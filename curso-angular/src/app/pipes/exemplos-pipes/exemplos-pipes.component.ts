@@ -20,6 +20,11 @@ export class ExemplosPipesComponent implements OnInit {
   
   filtro: string;
 
+  valorAssync = new Promise((resolve,rejeact) => {
+    setTimeout(() => resolve('Valor assyn 1'), 2000);
+  });
+
+
   constructor() { }
 
   ngOnInit(): void {
