@@ -106,6 +106,30 @@ Componente | Declare o serviço na propriedade `providers` no decorator `@Compon
 
 <hr>
 
+## Pipes
+São classes que transforma um ou mais valores para exibição desse(s) valor(es) transformados no template do componente.
+
+Pipes         | Objetivo
+------------- | ----------
+uppercase     | Transforma a string em letras maiúsculas
+lowercase     | Transforma a string em letras minúsculas
+json          | Transforma o objeto para o formato json
+number        | Transforma o valor para numérico. Podemos passar alguns argumentos para esse pipe como número máximo de casas decimais Ex: `{{ numero | number:'1.1-2'}}`
+currency      | Transforma o valor para formato da moeda desejada: Real, dólar, euro... Ex: `{{ moeda | currency:'BRL' }}`
+date          | Transforma a data para o formato desejado Ex: `{{ data | date:'dd-MM-yyyy'}}`
+
+Para mais detalhes de como implementar os pipes acima... procure pelo diretório `src\app\pipes\exemplos-pipes` ou acesso o site <https://angular.io/api/common#pipes>
+
+### Pipes puros e impuros
+* Puro: Um pipe puro ele não verifica as modificações do argumento "values" passado para o método `transform()`. Consequentemente, caso o argumento sofra alguma alteração o pipe não ficará sabendo dessa modificação. Para exemplo prático, procure pelo diretório `src\app\pipes\exemplos-pipes`
+
+* Impuro: É o contrário do comportamento do pipe puro.
+
+>Obs: Os pipes que foram criados para exemplificar os conceitos de Pipes puros e impuros são meramente exemplo.
+>**NÃO UTILIZE DE FORMA ALGUMA PIPES PARA ORDENAÇÃO OU FILTRO DE ARRAYS** faça isso utilizando métodos dentro da própria classe do componente.
+
+<hr>
+
 ## Tabela de decorators Angular
 
 Decorator   | Objetivo

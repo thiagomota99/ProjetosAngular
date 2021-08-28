@@ -1,0 +1,42 @@
+<h2>Exemplos de Pipes</h2>
+
+<!-- Pipes aninhados primeiro transforma a string em letras maiúsculas depois em letras minúsculas. A execução se dará da esquerda para a direita. -->
+<p>Titulo: {{ livro.titulo | uppercase | lowercase | camelCase}}</p>
+<!-- number:'casasDecimaisAntesDaVirgula.numeroMinimoDeCasasDecimaisDepoisDaVirgula.numeroMaximoDeCasasDecimaisDepoisDaVirgula'-->
+<p>Titulo: {{ livro.rating | number:'1.1-2' }}</p>
+<p>Titulo: {{ livro.numeroPaginas }}</p>
+<!-- currency:'codigoDaMoeada'-->
+<p>Titulo: {{ livro.preco | currency:'BRL' }}</p>
+<!-- date:'formatoDaData'-->
+<p>Titulo: {{ livro.dataLancamento | date:'dd-MM-yyyy'}}</p>
+<p>Titulo: {{ livro.url }}</p>
+<hr>
+
+<!-- json transforma um objeto qualquer para JSON -->
+<p>Livro: {{ livro | json }}</p>
+
+
+<h1>Exemplo de Pipe "puro"</h1>
+<p>
+    Faça o seguinte teste: aplique um filtro: Ex: ava. Depois adicione um novo curso como "Java 2". Vai notar que o filtro não conseguirá filtrar.
+    Pois o pipe puro não olha as modificações do argumento de valor (no nosso caso o array cursos) passado para o seu método transform.
+</p>
+<input type="text" [(ngModel)]="filtro"><br>
+<input type="text" #novoValor> <br>
+<button (click)="addCurso(novoValor.value)">Add Curso</button>
+
+<ul>
+    <li *ngFor="let curso of cursos | filtroArray:filtro">{{ curso }}</li>
+</ul>
+
+
+<h1>Pipe Impuro</h1>
+<ul>
+    <li *ngFor="let curso of cursos | filtroArrayImpuro:filtro">{{ curso }}</li>
+</ul>
+
+<h1>Maneira Correta</h1>
+<p>Nunca utilize pipes para </p>
+<ul>
+    <li *ngFor="let curso of obterCursos()">{{ curso }}</li>
+</ul>
